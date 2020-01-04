@@ -1,0 +1,29 @@
+.bottom-menu{
+  background-color: #1b1b1b;
+  align-items: center;
+  border-top: 1px solid #3b3b3b;
+}
+.bottom-menu-text{
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  width: 100%;
+
+}
+
+.bottom-menu-text-choose{
+  border-bottom: #f90 2px solid;
+  margin-bottom: 4px;
+}
+
+.bottom-menu-container{
+  padding: 8px 0px;
+  text-align: center;
+}
+
+.bottom-menu-container:hover{
+  border-left: 1px solid #3b3b3b;
+  border-right: 1px solid #3b3b3b;
+  cursor: pointer;
+  background-color: #151616;
+}

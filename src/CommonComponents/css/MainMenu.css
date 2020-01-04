@@ -1,0 +1,19 @@
+.mainMenu{
+  background-color: #1b1b1b;
+  padding: 4px 0;
+  align-items: center;
+}
+
+.main-menu-btn-container{
+  text-align: right;
+  
+}
+.main-menu-row{
+  align-items: center;
+}
+.main-menu-btn-sign{
+  background-color: inherit;
+  border:none;
+  font-size: 14px;
+  color: #BBBBBB;
+}

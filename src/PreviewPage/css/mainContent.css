@@ -1,0 +1,50 @@
+.main-content-preview{
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.main-content-preview-line{
+  height: 40px;
+  background-color: black;
+  width: 100%;
+}
+.main-content-preview-text{
+  padding: 150px 0;
+
+}
+
+.main-content-preview-text h2{
+  color: white;
+  font-size: 68px;
+  font-weight: 700;
+}
+
+.main-content-preview-text span{
+  font-size: 19px;
+  color: #c5c5c5;
+  margin: 15px 0 55px;
+}
+
+.main-content-preview-text button{
+  width: 360px;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  border-radius: 4px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  line-height: 50px;
+}
+
+.main-content-preview-text .btn-regist{
+ margin-top: 55px;
+ background: #636363;
+  color: #fff;
+}
+
+.main-content-preview-text .btn-premium{
+  background: #f90;
+  color: #000;
+}

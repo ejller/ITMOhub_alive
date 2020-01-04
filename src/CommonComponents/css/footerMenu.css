@@ -1,0 +1,35 @@
+.fotter-menu-container{
+  background-color: #151515;
+  border-top: 1px solid #292929;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.fotter-menu-container span{
+  font-size: 20px;
+  font-weight: 700;
+  color: grey;
+  margin: 0;
+}
+
+.fotter-menu-container a{
+  display: block;
+  color: #f90;
+  outline-style: none;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.fotter-menu-container a:hover{
+  color: #f90;
+  outline-style: none;
+  text-decoration: none;
+}
+.footer{
+  font-size: 14px;
+  padding: 6px;
+  text-align: center;
+  color: #636566;
+  background-color: black;
+}
