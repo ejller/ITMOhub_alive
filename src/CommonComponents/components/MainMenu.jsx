@@ -2,6 +2,8 @@ import React from 'react'
 import '../css/MainMenu.css'
 import {Container, Row, Col} from 'react-bootstrap';
 import logo from '../res/logo.png'
+import { connect } from 'react-redux';
+
 
 class MainMenu extends React.Component {
   constructor(props){
@@ -20,7 +22,7 @@ class MainMenu extends React.Component {
           <Col lg={{span:6}}>
           </Col>
           <Col lg={{span:2}} className="main-menu-btn-container">
-            <button className="main-menu-btn-sign">Вход</button>
+            <button className="main-menu-btn-sign" onClick={this.props.openModal} >Вход</button>
             <button className="main-menu-btn-sign">Регистрация</button>
           </Col>
         </Row>
@@ -29,4 +31,16 @@ class MainMenu extends React.Component {
   }
 }
 
-export default MainMenu
+function mapState(state) {
+  return {
+      isOpen: state.modal.isOpen
+  }
+}
+
+const actionCreators = {
+  openModal: function(){
+    return {type: 'MODAL_OPEN'}
+  }
+}
+
+export default connect(mapState, actionCreators)(MainMenu)

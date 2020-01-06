@@ -5,18 +5,27 @@ import BottomMenuUnregist from '../CommonComponents/components/BottomMenuUnregis
 import MainContent from './components/MainContent'
 import Modal from '../CommonComponents/components/Modal/Modal'
 import Footer from '../CommonComponents/components/FooterMenu'
+import { connect } from 'react-redux';
 
-function PreviewPage(){
-  return(
-    <div className="previewPage">
-      {true?<Modal/>:null}
-      <NetworkList/>
-      <MainMenu/>
-      <BottomMenuUnregist isMain="bottom-menu-text-choose"/>
-      <MainContent/>
-      <Footer/>
-    </div>
-  )
+class PreviewPage extends React.Component{
+  render() {
+    return(
+      <div className="previewPage">
+        {this.props.isOpen?<Modal/>:null}
+        <NetworkList/>
+        <MainMenu/>
+        <BottomMenuUnregist isMain="bottom-menu-text-choose"/>
+        <MainContent/>
+        <Footer/>
+      </div>
+    )
+  }
 }
 
-export default PreviewPage
+function mapState(state) {
+  return {
+      isOpen: state.modal.isOpen
+  }
+}
+
+export default connect(mapState)(PreviewPage)
