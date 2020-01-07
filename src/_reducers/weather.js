@@ -6,6 +6,7 @@ import rainImg from '../CommonComponents/res/weather/rain.svg'
 
 
 export function weather (state={imgWeather:''}, action) {
+  console.log(action.type)
   switch (action.type){
     case 'UPDATE_WEATHER':
       { switch (action.data){

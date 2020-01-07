@@ -9,7 +9,7 @@ import './css/weather.css'
 import backNightImg from '../CommonComponents/res/back_night.png'
 import { ReactSVG } from 'react-svg'
 import { connect } from 'react-redux';
-import {weatherAction} from '../_actions/weather'
+import MainPage from '../MainPage/MainPage'
 
 class App extends React.Component{
   render(){
@@ -19,10 +19,10 @@ class App extends React.Component{
       <ReactSVG src={this.props.imgWeather} className="weather_img"></ReactSVG>
       <Router history={history}>
         <Switch>
-          <IsLoginRoute exact path='/'/>
+          <IsLoginRoute exact path='/main' component={MainPage}/>
           <PreviewRoute path="/preview" component={PreviewPage}/>
           <PreviewRoute path='/regist' component={RegistPage}/>
-          <Redirect from='*' to='/'/>
+          <Redirect from='*' to='/main'/>
         </Switch>
       </Router>
     </div>
@@ -37,9 +37,5 @@ function mapState(state) {
   }
 }
 
-const actionCreators = {
-  getWeather: weatherAction.weather
-}
 
-
-export default connect(mapState, actionCreators)(App)
+export default connect(mapState)(App)

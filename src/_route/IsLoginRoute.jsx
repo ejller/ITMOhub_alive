@@ -11,5 +11,5 @@ export const IsLoginRoute = ({ component: Component, ...rest }) => (
 )
 
 function checkSignIn(){
-  return false
+  return true
 }

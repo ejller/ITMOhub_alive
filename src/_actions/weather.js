@@ -8,6 +8,7 @@ function weather(){
   let lon = 35;
   let lat = 139;
   navigator.geolocation.getCurrentPosition(function(position){
+    console.log('i work')
     lon = position.coords.longitude;
     lat = position.coords.latitude;
     console.log(lon+" "+lat)

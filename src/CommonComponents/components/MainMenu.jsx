@@ -4,15 +4,9 @@ import {Container, Row, Col} from 'react-bootstrap';
 import logo from '../res/logo.png'
 import { connect } from 'react-redux';
 import {history} from '../../_helpers/history'
-
+import {user} from '../../_actions/userAction'
 
 class MainMenu extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-
-    }
-  }
   render(){
     return(
       <Container fluid={true} className="mainMenu">
@@ -23,8 +17,9 @@ class MainMenu extends React.Component {
           <Col lg={{span:6}}>
           </Col>
           <Col lg={{span:2}} className="main-menu-btn-container">
-            <button className="main-menu-btn-sign" onClick={this.props.openModal} >Вход</button>
-            <button disabled={this.props.isRegist} onClick={function(){history.push('/regist')}} className="main-menu-btn-sign">Регистрация</button>
+            {this.props.isLogin?<button className="main-menu-btn-sign" onClick={this.props.logOut} >Выход</button>:
+            <button className="main-menu-btn-sign" onClick={this.props.openModal} >Вход</button>}
+            {this.props.isLogin?'':<button disabled={this.props.isRegist} onClick={function(){history.push('/regist')}} className="main-menu-btn-sign">Регистрация</button>}
           </Col>
         </Row>
       </Container>
@@ -41,7 +36,8 @@ function mapState(state) {
 const actionCreators = {
   openModal: function(){
     return {type: 'MODAL_OPEN'}
-  }
+  },
+  logOut: user.logOut
 }
 
 export default connect(mapState, actionCreators)(MainMenu)
