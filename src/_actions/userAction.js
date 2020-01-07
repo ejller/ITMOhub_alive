@@ -44,7 +44,7 @@ function logOut(data){
   return dispatch =>{
     dispatch(success())
     localStorage.removeItem('user')
-    localStorage.removeItem('user')
+    localStorage.removeItem('hash')
     history.push('/preview')
   }
   function success() { return { type: userConstants.logOutConstants.LOGOUT_SUCCESS } }
