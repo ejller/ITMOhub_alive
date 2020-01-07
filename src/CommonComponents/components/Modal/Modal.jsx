@@ -5,8 +5,13 @@ import Close from '../../res/close.png'
 import FormIn from './Form'
 import TrueIcon from '../../res/true.png'
 import { connect } from 'react-redux';
+import {history} from '../../../_helpers/history'
 
 class ModalSign extends React.Component {
+  constructor(props){
+    super(props);
+    this.isRegistPage=this.isRegistPage.bind(this)
+  }
   render() {
     return(
       <div id="modal-dialog">
@@ -30,7 +35,7 @@ class ModalSign extends React.Component {
                  <img src={TrueIcon} width="20px" alt="true"/> Вот то, чего Вы себя лишаете! <br/>
                  </p>
                <p>И многое другое!</p>
-               <button className='modal-btn-up'>Регистрация</button>
+               <button className='modal-btn-up' onClick={this.isRegistPage}>Регистрация</button>
                </Col>
              </Row>
             </Col>
@@ -38,6 +43,11 @@ class ModalSign extends React.Component {
         </Container>
       </div>
     );
+  }
+  isRegistPage(){
+    this.props.closeModal();
+    if(history.location.pathname!=='/regist')
+      history.push('/regist')
   }
 }
 

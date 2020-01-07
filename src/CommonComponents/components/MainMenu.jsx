@@ -3,6 +3,7 @@ import '../css/MainMenu.css'
 import {Container, Row, Col} from 'react-bootstrap';
 import logo from '../res/logo.png'
 import { connect } from 'react-redux';
+import {history} from '../../_helpers/history'
 
 
 class MainMenu extends React.Component {
@@ -23,7 +24,7 @@ class MainMenu extends React.Component {
           </Col>
           <Col lg={{span:2}} className="main-menu-btn-container">
             <button className="main-menu-btn-sign" onClick={this.props.openModal} >Вход</button>
-            <button className="main-menu-btn-sign">Регистрация</button>
+            <button disabled={this.props.isRegist} onClick={function(){history.push('/regist')}} className="main-menu-btn-sign">Регистрация</button>
           </Col>
         </Row>
       </Container>

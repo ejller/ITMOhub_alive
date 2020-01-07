@@ -3,6 +3,7 @@ import { Row, Col} from 'react-bootstrap';
 import '../css/table.css'
 import iconeTrue from '../res/true.png'
 import iconeFalse from '../res/false.png'
+import {history} from '../../_helpers/history'
 
 
 class MainContent extends React.Component {
@@ -142,7 +143,7 @@ class MainContent extends React.Component {
           
          </Col>
          <Col lg={{span: 2}} className="main-content-preview-table ">
-            <button className="btn-table free">Зарегистрироваться</button>
+            <button className="btn-table free" onClick={function(){history.push('/regist')}}>Зарегистрироваться</button>
            </Col>
          <Col lg={{span: 2}} className="main-content-preview-table">
             <button className="btn-table premium">Получить премиум</button>

@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import '../css/mainContent.css'
 import Back from '../res/back.jpg'
 import Table from './Table'
+import {Link} from 'react-router-dom'
 
 
 
@@ -20,7 +21,7 @@ class MainContent extends React.Component {
             А еще лучше прокачать свой аккаунт и присоединиться к ITMOhub Premium для еще большего удовольствия!
             </span>
             <br/>
-            <button className="btn-regist">Зарегистрироваться бесплатно</button>
+            <Link to='/regist'><button className="btn-regist">Зарегистрироваться бесплатно</button></Link>
             <br/>
             <button className="btn-premium">Получить ITMOhub Премиум</button>
          </Col>

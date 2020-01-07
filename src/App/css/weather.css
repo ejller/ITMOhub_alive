@@ -1,0 +1,18 @@
+.time_img{
+  background-size: cover;
+  position: fixed;
+  pointer-events: none;
+  height: 100vh;
+  z-index: 997;
+  width: 100%;
+  opacity: 0.4;
+}
+
+.weather_img{
+  position: fixed;
+  pointer-events: none;
+  height: 100vh;
+  z-index: 998;
+  width: 100%;
+  opacity: 0.7;
+}

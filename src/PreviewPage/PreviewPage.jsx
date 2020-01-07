@@ -6,9 +6,11 @@ import MainContent from './components/MainContent'
 import Modal from '../CommonComponents/components/Modal/Modal'
 import Footer from '../CommonComponents/components/FooterMenu'
 import { connect } from 'react-redux';
+import {weatherAction} from '../_actions/weather'
 
 class PreviewPage extends React.Component{
   render() {
+    this.props.getWeather()
     return(
       <div className="previewPage">
         {this.props.isOpen?<Modal/>:null}
@@ -24,8 +26,13 @@ class PreviewPage extends React.Component{
 
 function mapState(state) {
   return {
-      isOpen: state.modal.isOpen
+      isOpen: state.modal.isOpen,
+      imgWeather: state.weather.imgWeather,
+      isNight: state.weather.isNight
   }
 }
+const actionCreators = {
+  getWeather: weatherAction.weather
+}
 
-export default connect(mapState)(PreviewPage)
+export default connect(mapState, actionCreators)(PreviewPage)

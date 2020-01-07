@@ -21,7 +21,7 @@ function MainComponent(){
             <FormReg/>
             <p className="regist-options">
             Подписываясь, вы соглашаетесь с нашими 
-            <a href="/#"> Положениями и условиями</a>
+            <a href="https://abit.ifmo.ru/page/66/#_Toc462360941" rel="noopener noreferrer" target="_blank"> Положениями и условиями</a>
             </p>
           </Col>
         </Row>

@@ -5,18 +5,35 @@ import BottomMenuUnregist from '../CommonComponents/components/BottomMenuUnregis
 import Modal from '../CommonComponents/components/Modal/Modal'
 import MainContent from './components/MainComponent'
 import Footer from '../CommonComponents/components/FooterMenu'
+import { connect } from 'react-redux';
+import {weatherAction} from '../_actions/weather'
 
-function RegistPage(){
-  return(
+
+class RegistPage extends React.Component{
+  render(){
+    this.props.getWeather()
+    return(
     <div className="previewPage">
-      {false?<Modal/>:null}
+      {this.props.isOpen?<Modal/>:null}
       <NetworkList/>
-      <MainMenu/>
+      <MainMenu isRegist={true}/>
       <BottomMenuUnregist/>
       <MainContent/>
       <Footer/>
     </div>
   )
+  }
+}
+function mapState(state) {
+  return {
+      isOpen: state.modal.isOpen,
+      imgWeather: state.weather.imgWeather,
+      isNight: state.weather.isNight
+  }
 }
 
-export default RegistPage
+const actionCreators = {
+  getWeather: weatherAction.weather
+}
+
+export default connect(mapState,actionCreators)(RegistPage)

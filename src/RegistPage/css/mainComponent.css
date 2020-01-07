@@ -69,14 +69,15 @@
 .regist-main-form{
   margin-bottom: 20px;
 }
-.regist-main-form-btn-in{
+span.regist-main-form-btn-in{
+  cursor: pointer;
   margin-left: 2%;
   margin-right: 18%;
   font-size: 20px;
   color: #f90;
   font-weight: 700;
 }
-.regist-main-form-btn-in:hover{
+span.regist-main-form-btn-in:hover{
   color: white;
   text-decoration: none;
 }
