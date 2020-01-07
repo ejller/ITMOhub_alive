@@ -11,5 +11,7 @@ export const IsLoginRoute = ({ component: Component, ...rest }) => (
 )
 
 function checkSignIn(){
-  return true
+  if(localStorage.getItem('hash'))
+    return true
+  return false
 }

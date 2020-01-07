@@ -10,7 +10,6 @@ import {weatherAction} from '../_actions/weather'
 
 class PreviewPage extends React.Component{
   render() {
-    this.props.getWeather()
     return(
       <div className="previewPage">
         {this.props.isOpen?<Modal/>:null}
@@ -21,6 +20,9 @@ class PreviewPage extends React.Component{
         <Footer/>
       </div>
     )
+  }
+  componentDidMount(){
+    this.props.getWeather()
   }
 }
 

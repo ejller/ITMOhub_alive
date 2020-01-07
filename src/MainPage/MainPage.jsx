@@ -5,10 +5,10 @@ import BottomMenuUnregist from '../CommonComponents/components/BottomMenuUnregis
 import Footer from '../CommonComponents/components/FooterMenu'
 import { connect } from 'react-redux';
 import {weatherAction} from '../_actions/weather'
+import {task} from '../_actions/taskAction'
 
 class MainPage extends React.Component{
-  render() {
-    this.props.getWeather()
+  render() { 
     return(
       <div className="mainPage">
         <NetworkList/>
@@ -17,6 +17,11 @@ class MainPage extends React.Component{
         <Footer/>
       </div>
     )
+  }
+
+  componentDidMount(){
+    this.props.getWeather()
+    this.props.getPoints()
   }
 }
 
@@ -28,7 +33,8 @@ function mapState(state) {
   }
 }
 const actionCreators = {
-  getWeather: weatherAction.weather
+  getWeather: weatherAction.weather,
+  getPoints: task.getPoints
 }
 
 export default connect(mapState, actionCreators)(MainPage)

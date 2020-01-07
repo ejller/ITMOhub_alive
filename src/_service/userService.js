@@ -42,7 +42,7 @@ function getPointsRequest(){
   const requestOptions = {
     method: 'GET',
     headers: {'Content-Type': 'application/json',
-              'Authorization': "Bearer_" + localStorage.getItem('user'),
+              'Authorization': "Bearer_" + localStorage.getItem('hash'),
               'Access-Control-Request-Method': 'GET',
               'Access-Control-Allow-Origin': '*',
               'Access-Control-Allow-Headers' : 'Origin, X-Requested-With, Content-Type, Accept',
