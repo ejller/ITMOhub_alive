@@ -1,6 +1,6 @@
 import {userConstants} from '../_constants/user'
 
-export function login (state={isLogin:false}, action) {
+export function login (state={isLogin:true}, action) {
   switch (action.type){
     case userConstants.loginConstants.LOGIN_SUCCESS:
       return {...state, isLogin:true, serverDie:false};

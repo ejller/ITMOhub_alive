@@ -6,6 +6,7 @@ import Footer from '../CommonComponents/components/FooterMenu'
 import { connect } from 'react-redux';
 import {weatherAction} from '../_actions/weather'
 import {task} from '../_actions/taskAction'
+import MainContent from './components/MainContent'
 
 class MainPage extends React.Component{
   render() { 
@@ -13,7 +14,8 @@ class MainPage extends React.Component{
       <div className="mainPage">
         <NetworkList/>
         <MainMenu isLogin={true}/>
-        <BottomMenuUnregist/>
+        <BottomMenuUnregist isMain={true}/>
+        <MainContent/>
         <Footer/>
       </div>
     )
@@ -36,5 +38,12 @@ const actionCreators = {
   getWeather: weatherAction.weather,
   getPoints: task.getPoints
 }
+
+window.addEventListener("beforeunload", (ev) => 
+{  if (!localStorage.getItem('save')){
+  localStorage.removeItem('hash')
+  localStorage.removeItem('user')
+}
+});
 
 export default connect(mapState, actionCreators)(MainPage)

@@ -27,7 +27,7 @@ function sendPointRequest(coor){
   const requestOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json',
-              'Authorization': "Bearer_" + localStorage.getItem('user'),
+              'Authorization': "Bearer_" + localStorage.getItem('hash'),
               'Access-Control-Request-Method': 'POST',
               'Access-Control-Allow-Origin': '*',
               'Access-Control-Allow-Headers' : 'Origin, X-Requested-With, Content-Type, Accept',

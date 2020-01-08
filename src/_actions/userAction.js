@@ -26,7 +26,7 @@ function signIn(data){
       }
     )
   }
-  function request(user) { return { type: userConstants.loginConstants.LOGIN_REQUEST, user } }
+  function request() { return { type: userConstants.loginConstants.LOGIN_REQUEST } }
   function success(data) { return { type: userConstants.loginConstants.LOGIN_SUCCESS, data } }
   function failure(error) { return { type: userConstants.loginConstants.LOGIN_FAILURE, error } }
   function crush(){return { type: userConstants.SERVER_DIE }}
@@ -34,10 +34,23 @@ function signIn(data){
 
 function signUp(data){
   return dispatch =>{
-    console.log(data)
+    dispatch(request(data));
+    service.signUpRequest(data).then(
+      data => {
+        dispatch(success(data))
+      },
+      error => {
+        if(error.toString()==='TypeError: Failed to fetch'){
+          dispatch(crush()) } else {
+          dispatch(failure(error.toString()))
+        }
+      }
+    )
   }
-
-  function logInSucsess(){return {type:'LOGIN_SUCSESS'}}
+  function request() { return { type: userConstants.registConstants.REGIST_REQUEST } }
+  function success(data) { return { type: userConstants.registConstants.REGIST_SUCCESS, data } }
+  function failure(error) { return { type: userConstants.registConstants.REGIST_FAILURE, error } }
+  function crush(){return { type: userConstants.SERVER_DIE }}
 }
 
 function logOut(data){
@@ -45,6 +58,8 @@ function logOut(data){
     dispatch(success())
     localStorage.removeItem('user')
     localStorage.removeItem('hash')
+    if(localStorage.removeItem('save'))
+    localStorage.removeItem('save')
     history.push('/preview')
   }
   function success() { return { type: userConstants.logOutConstants.LOGOUT_SUCCESS } }

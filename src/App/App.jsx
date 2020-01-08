@@ -30,6 +30,7 @@ class App extends React.Component{
 }
 }
 
+
 function mapState(state) {
   return {
       imgWeather: state.weather.imgWeather,

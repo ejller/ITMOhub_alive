@@ -1,0 +1,15 @@
+.main-table{
+  text-align: center;
+}
+
+.main-table-first-row{
+  font-size: 18px;
+  font-weight: 600;
+}
+.main-table-col{
+  border-right: black 2px solid;
+}
+
+.main-table-bottom-first{
+  border-bottom: black 2px solid;
+}

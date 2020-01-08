@@ -18,14 +18,15 @@ function weather(){
       response => {
         response.text().then(text=>{
           const data = text && JSON.parse(text)
+          if (data.weather!==''){
           const res =  data.weather[0].main;
-          console.log(res)
           let time = false
           const date = new Date();
           if(date.getHours()<6||date.getHours()>18)
            time = true
           dispatch(updateWeather(res));
           dispatch(updateTime(time));
+          }
         })
       }
     )
