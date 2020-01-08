@@ -12,10 +12,10 @@ constructor(props){
   render(){
     return(
       <div>
-      {this.state.getResponse?<audio controls>
+      {this.state.getResponse? <div className="audio-contain"><p>Вам может это понравиться:</p>< audio className="audio" controls>
 		      <source src={this.state.preview} type="audio/mpeg" >
 		      </source>
-       </audio>:'' }
+       </audio></div>:'' }
        </div>
     )
   }

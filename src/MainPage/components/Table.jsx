@@ -12,19 +12,19 @@ class Table extends React.Component{
     return(
       <Container className="main-table" fluid={true}>
         <Row className="main-table-first-row">
-         <Col lg={{span: 2 , offset: 1}} className="main-table-col main-table-bottom-first">
+         <Col lg={{span: 2 , offset: 1}} xs={{span: 2, offset: 1 }} className="main-table-col main-table-bottom-first">
            X:
          </Col>
-         <Col lg={{span: 2 }} className="main-table-col main-table-bottom-first">
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col main-table-bottom-first">
            Y:
          </Col>
-         <Col lg={{span: 2 }} className="main-table-col main-table-bottom-first">
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col main-table-bottom-first">
            R:
          </Col>
-         <Col lg={{span: 2 }} className="main-table-col main-table-bottom-first">
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col main-table-bottom-first">
            Попадание:
          </Col>
-         <Col lg={{span: 2 }} className="main-table-bottom-first">
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-bottom-first">
            Корректность:
          </Col>
          </Row>
@@ -39,11 +39,11 @@ class Table extends React.Component{
         const { x, y, r, hit, correct } = points
         return (
         <Row key={index}>
-         <Col lg={{span: 2 , offset: 1}} className="main-table-col"> {x}</Col>
-         <Col lg={{span: 2 }} className="main-table-col"> {y}</Col>
-         <Col lg={{span: 2 }} className="main-table-col"> {r}</Col>
-         <Col lg={{span: 2 }} className="main-table-col"> {hit?'YES':'Not'}</Col>
-         <Col lg={{span: 2 }}> {correct?'YES':'Not'}</Col>
+         <Col lg={{span: 2 , offset: 1}} xs={{span: 2, offset: 1 }} className="main-table-col"> {x}</Col>
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col"> {y}</Col>
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col"> {r}</Col>
+         <Col lg={{span: 2 }} xs={{span: 2 }} className="main-table-col"> {hit?'YES':'No...'}</Col>
+         <Col lg={{span: 2 }} xs={{span: 2 }}> {correct?'YES':'Not'}</Col>
         </Row>
        )
       })

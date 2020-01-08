@@ -1,0 +1,35 @@
+.form-main-row{
+  align-items: center;
+  padding: 60px 0;
+}
+
+.mainContent{
+  background-color: black;
+  color: white;
+}
+
+.form-main-row.table-history{
+  margin-bottom: 60px;
+  background-color: #1b1b1b;
+  border-radius: 20px;
+}
+
+.btn-main-sbmt{
+  font-size: 20px;
+  width: 100%;
+  font-weight: 400;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  margin: 30px 0;
+  background-color: #f90;
+  border: none;
+}
+
+.audio-contain{
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.audio{
+  width: 100%;
+}

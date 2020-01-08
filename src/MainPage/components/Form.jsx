@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import {Form, Button, Alert} from 'react-bootstrap';
 import {task} from '../../_actions/taskAction'
+import LoveMusic from '../../_service/music'
 class FormComponent extends React.Component{
     constructor(props){
       super(props)
@@ -57,9 +58,10 @@ class FormComponent extends React.Component{
         Введите, пожалуста, корректные значения Y: (-5...3)
     </Alert>}
 
-  <Button  variant="primary" disabled={!this.valid.validBtn} onClick={this.handleSubmit.bind(this)} type="submit">
+  <Button  variant="primary" bsPrefix="btn-main-sbmt"  disabled={!this.valid.validBtn} onClick={this.handleSubmit.bind(this)} type="submit">
     Submit
   </Button>
+  <LoveMusic/>
     </Form>
     )
   }

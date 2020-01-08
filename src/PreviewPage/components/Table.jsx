@@ -11,7 +11,7 @@ class MainContent extends React.Component {
    return (
      <div>
        <Row className="main-content-preview-table-container header">
-         <Col lg={{span: 3, offset: 1}} className="main-content-preview-table header">
+         <Col lg={{span: 3, offset: 1} } className="main-content-preview-table header">
          ЧТО ВЫ ПОЛУЧАЕТЕ:
          </Col>
          <Col lg={{span: 3}} className="main-content-preview-table header">
