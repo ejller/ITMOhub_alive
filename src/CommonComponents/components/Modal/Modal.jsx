@@ -29,10 +29,9 @@ class ModalSign extends React.Component {
                <br/>
                <p>Вот то, чего Вы себя лишаете!</p>
                <p>
-                 <img src={TrueIcon} width="20px" alt="true"/> Вот то, чего Вы себя лишаете! <br/>
-                 <img src={TrueIcon} width="20px" alt="true"/> Вот то, чего Вы себя лишаете! <br/>
-                 <img src={TrueIcon} width="20px" alt="true"/> Вот то, чего Вы себя лишаете! <br/>
-                 <img src={TrueIcon} width="20px" alt="true"/> Вот то, чего Вы себя лишаете! <br/>
+                 <img src={TrueIcon} width="20px" alt="true"/> Проверка Вашей меткости <br/>
+                 <img src={TrueIcon} width="20px" alt="true"/> Проверка умственных способностей <br/>
+                 <img src={TrueIcon} width="20px" alt="true"/> Приятный музыкальный сюрприз <br/>
                  </p>
                <p>И многое другое!</p>
                <button className='modal-btn-up' onClick={this.isRegistPage}>Регистрация</button>

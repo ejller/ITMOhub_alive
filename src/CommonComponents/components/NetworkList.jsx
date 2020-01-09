@@ -68,7 +68,7 @@ class NetworkList extends React.Component{
               <Col className="btn_networkList home" lg={{span:1}}>
                 HOME
               </Col>
-              <Col className="btn_networkList" onClick={()=>this.onClick('PREMIUM')} lg={{span:1}}>
+              <Col className="btn_networkList premium"  lg={{span:1}}>
                 PREMIUM
               </Col>
               <Col className="btn_networkList" onClick={()=>this.onClick('SHOP')} lg={{span:1}}>

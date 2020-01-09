@@ -146,7 +146,7 @@ class MainContent extends React.Component {
             <button className="btn-table free" onClick={function(){history.push('/regist')}}>Зарегистрироваться</button>
            </Col>
          <Col lg={{span: 2}} className="main-content-preview-table">
-            <button className="btn-table premium">Получить премиум</button>
+            <button className="btn-table premium" disabled>Получить премиум</button>
          </Col>
        </Row>     
        </div>   

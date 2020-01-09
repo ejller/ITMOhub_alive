@@ -23,7 +23,7 @@ class MainContent extends React.Component {
             <br/>
             <Link to='/regist'><button className="btn-regist">Зарегистрироваться бесплатно</button></Link>
             <br/>
-            <button className="btn-premium">Получить ITMOhub Премиум</button>
+            <button className="btn-premium" disabled>Получить ITMOhub Премиум</button>
          </Col>
        </Row>
        <Table/>

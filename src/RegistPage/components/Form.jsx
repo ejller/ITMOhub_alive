@@ -11,13 +11,11 @@ class FormReg extends React.Component{
       login: '',
       password: '',
       retPassword:'',
-      isValidPass:true,
-      isValid: false
+      сlick: false
     }
     this.valid ={
       isValidPass:true,
-      isValid: false,
-      onClick: false
+      isValid: false
     }
     this.submitHandle = this.submitHandle.bind(this)
     this.checkHandle = this.checkHandle.bind(this)
@@ -26,15 +24,15 @@ class FormReg extends React.Component{
     return(
     <Form className="regist-main-form">
       <Form.Control placeholder="Имя:" bsPrefix="regist-main-input" 
-      onChange={e => {this.setState({login:e.target.value}); this.valid.onClick=false; this.checkHandle(e.target.value, this.state.password, this.state.retPassword)}}/>
+      onChange={e => {this.setState({login:e.target.value}); this.checkHandle(e.target.value, this.state.password, this.state.retPassword)}}/>
       <Form.Control type='password' placeholder="Пароль:" bsPrefix="regist-main-input" 
-      onChange={e => {this.setState({password:e.target.value}); this.valid.onClick=false;this.checkHandle(this.state.login, e.target.value, this.state.retPassword)}}/>
+      onChange={e => {this.setState({password:e.target.value}); this.checkHandle(this.state.login, e.target.value, this.state.retPassword)}}/>
       <Form.Control type='password' placeholder="Повторите пароль:" bsPrefix="regist-main-input" 
-      onChange={e => {this.setState({retPassword:e.target.value}); this.valid.onClick=false; this.checkHandle(this.state.login, this.state.password, e.target.value)}}/>
-      {this.props.isRegist&&this.valid.onClick?<Alert variant='success'>
+      onChange={e => {this.setState({retPassword:e.target.value});  this.checkHandle(this.state.login, this.state.password, e.target.value)}}/>
+      {this.state.click&&this.props.isRegist?<Alert variant='success'>
         Вы успешно зарегистрированы
       </Alert>:''}
-      {this.props.isRegist?'':<Alert variant='dark'>
+      {(this.props.isRegist)?'':<Alert variant='dark'>
         Данное имя уже занято
       </Alert>}
       {this.valid.isValidPass?'':<Alert variant='dark'>
@@ -46,7 +44,10 @@ class FormReg extends React.Component{
     </Form>
   )
   }
+
+
   checkHandle(log, pass, retPass){
+    this.setState({click: false})
     let emptyLog = true
     let emptyPass = true
     let emptyRetPass = true
@@ -73,7 +74,7 @@ class FormReg extends React.Component{
   submitHandle(e){
     e.preventDefault();
     this.props.signUp({login: this.state.login, password: this.state.password})
-    this.valid.onClick=true
+    this.setState({click: true})
   }
 }
 

@@ -20,6 +20,13 @@
 padding: 0px !important;
 }
 
+.premium{
+  cursor: default;
+}
+.premium:hover{
+  background-color: black !important;
+}
+
 .btn_networkList:hover:not(.home){
   background-color: #353535;
   color: white;
